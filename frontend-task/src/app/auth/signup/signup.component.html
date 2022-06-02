@@ -1,0 +1,99 @@
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-9 col-xl-7">
+                <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                    <div class="card-body p-4 p-md-5">
+                        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Registration Form  (SignUp Form)</h3>
+                        <h5 style="color: red;" *ngIf="msg.success"> {{msg.success}} </h5>
+                        <h5 style="color: red;" *ngIf="msg.err"> {{msg.err}} </h5>
+                        <form [formGroup]="signUpForm" (ngSubmit)="submit()">
+
+                            <div class="row">
+                                <div class="col-md-8 mb-4">
+
+                                    <div class="form-outline">
+                                        <input type="text" formControlName="name" id="firstName" class="form-control form-control-lg" />
+                                        <label class="form-label" for="firstName"> Name</label>
+                                    </div>
+
+                                </div>
+                               
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4 d-flex align-items-center">
+
+                                    <div class="form-outline datepicker w-100">
+                                        <input type="text" formControlName="age" placeholder="18" class="form-control form-control-lg" id="birthdayDate" />
+                                        <label for="birthdayDate" class="form-label">Age</label>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 mb-4">
+
+                                    <h6 class="mb-2 pb-1">Gender: </h6>
+
+                                    <div class="form-check form-check-inline">
+                                        <input formControlName="gender" class="form-check-input" type="radio" 
+                                            id="femaleGender" value="female" checked />
+                                        <label class="form-check-label" for="female">Female</label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" 
+                                            id="male" formControlName="gender" value="male" />
+                                        <label class="form-check-label" for="male">Male</label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" formControlName="gender" 
+                                            id="otherGender" value="others" />
+                                        <label class="form-check-label" for="other">Other</label>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4 pb-2">
+
+                                    <div class="form-outline">
+                                        <input type="email" id="emailAddress" formControlName="email" class="form-control form-control-lg" />
+                                        <label class="form-label" for="emailAddress">Email</label>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 mb-4 pb-2">
+
+                                    <div class="form-outline">
+                                        <input type="tel" id="phoneNumber" formControlName="phone" class="form-control form-control-lg" />
+                                        <label class="form-label" for="phoneNumber">Phone Number</label>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12">
+
+                                    <div class="form-outline">
+                                        <input type="password" id="phoneNumber" formControlName="password" class="form-control form-control-lg" />
+                                        <label class="form-label" for="phoneNumber">Password </label>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="mt-4 pt-2">
+                                <input class="btn btn-primary btn-lg" [disabled]="!signUpForm.valid" type="submit" value="Submit" />
+                            </div>
+
+                        </form>
+                        <p>Already have an account <a [routerLink]="['/login']" routerLinkActive="router-link-active" >Login</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

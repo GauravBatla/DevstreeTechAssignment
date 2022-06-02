@@ -1,0 +1,17 @@
+<p>
+    <mat-toolbar style="height:90px" color="primary">
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        </button>
+        <span>
+            <img width="89px" src="	https://www.devstree.com/wp-content/uploads/2020/12/logo-2.png" alt="">
+        </span>
+        <span class="example-spacer"></span>
+        <button mat-button [routerLink]="['/']" routerLinkActive="router-link-active">Home</button>
+
+        <button mat-button [routerLink]="['/about']" routerLinkActive="router-link-active">About</button>
+        <button mat-button [routerLink]="['/users']">All Users</button>
+        <button mat-button (click)="logout()">LogOut</button>
+    </mat-toolbar>
+</p>
+
+<router-outlet></router-outlet>

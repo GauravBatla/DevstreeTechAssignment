@@ -1,0 +1,15 @@
+<div class="loginBox"> <img class="user" src="https://i.ibb.co/yVGxFPR/2.png" height="100px" width="100px">
+    <h3>Sign in here</h3>
+    <h1 class="text-center py-2">Login In</h1> <br> <span style="color: red; text-align: center;">
+        <h5> {{ msg.error?msg.error:" "}} </h5>
+    </span>
+
+    <form [formGroup]="adminLogin" (ngSubmit)="login()">
+        <div class="inputBox"> <input id="uname" type="text" formControlName="email" placeholder="Email">
+            <input id="pass" type="password" formControlName="password" placeholder="Password">
+        </div> <input type="submit" name="" value="Login">
+    </form>
+    <div class="text-center">
+        <p style="color: white;"> <a [routerLink]="['/signup']" routerLinkActive="router-link-active"> Sign-Up</a></p>
+    </div>
+</div>
